@@ -9,10 +9,10 @@ double roznica(int m, int **tab) {
 	return double(tab[1][m]) - 7.92;
 }
 double skrt(int m, int **tab) {
-	return sqrt(pow(double(tab[1][m]),4))
+	return sqrt(pow(double(tab[1][m]),4));
 }
 double default(int m, int **tab) {
-	return tab[1][m]
+	return tab[1][m];
 }
 
 
