@@ -1,0 +1,21 @@
+%d is a signed integer, while %u is an unsigned integer
+
+typ w fopen:
+r-tylko odczyt
+w-tylko zapis
+a-dopisywanie na koncu
++-mozliwosc aktualizacji
+b-otworzenie jako plik binarny
+t-odworzenie jako plik tekstowy 
+
+tworzenie dynamicznej jednowymiarowej tablicy:
+type *tab = new type[rozmiar]
+
+tworzenie dynamicznej dwuwymiarowej tablicy:
+	type **tab = new type*[w];
+	for (int i = 0;i < w;i++) {
+		tab[i] = new unsigned int[k];
+	}
+
+lista wskaźników do funkcji:
+typ(*wsk[3])(typy argumentów) = { F0,F1,F2 };
