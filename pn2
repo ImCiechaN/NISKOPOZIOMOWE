@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+unsigned int bitCount(unsigned int value) {
+	unsigned int count = 0;
+	while (value > 0) {
+		if ((value & 1 ) == 1)
+			count++;
+		value >>= 1;
+		
+	}
+	return count;
+}
+
+int main() {
+	int W;
+	int K;
+	printf("Podaj W i K\n");
+	scanf("%d%d", &W, &K);
+	unsigned int **tab = new unsigned int*[W];
+	for (int i =0;i<W;i++) {
+		tab[i] = new unsigned int[K];
+	}
+	printf("podaj wartosc: \n");
+	for (int i =0;i<W;i++) {
+		for (int j=0; j<K;j++) {
+			scanf("%u", &tab[i][j]);
+		}
+	}
+	
+	int maxindex = 0;
+	int maxsuma = 0;
+	
+	for (int i=0;i<W;i++) {
+		int suma = 0;
+		for (int j = 0;j<K;j++) {
+			int a = bitCount(tab[i][j]);
+			suma += a;
+		}
+		if (suma > maxsuma) {
+			maxsuma=suma;
+			maxindex=i;
+		}
+	}
+	for (int j= 0; j< K;j++) {
+		printf("%u", tab[maxindex][j]);
+	}	
+	return 0;
+}
